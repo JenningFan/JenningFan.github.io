@@ -7,24 +7,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hello | Jenning&#39;s mystery</title>
+  <title>quicksort | Jenning&#39;s mystery</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="随笔," />
+    <meta name="keywords" content="前端," />
   
 
-  <meta name="description" content="试试看长什么样1console.log(&amp;apos;hello&amp;apos;);">
+  <meta name="description" content="用javascipt实现的一个快排算法1234567891011121314151617181920212223var a = [2,4,5,63,4,5,63,2,4,43]; function quicksort(arr)&amp;#123;    if (arr.length == 0)        return [];     var left = new Array();    var rig">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello">
-<meta property="og:url" content="https://JenningFan.github.io/2017/03/06/hello/index.html">
+<meta property="og:title" content="quicksort">
+<meta property="og:url" content="https://JenningFan.github.io/2017/03/07/quicksort/index.html">
 <meta property="og:site_name" content="Jenning's mystery">
-<meta property="og:description" content="试试看长什么样1console.log(&amp;apos;hello&amp;apos;);">
-<meta property="og:updated_time" content="2017-03-07T08:09:45.043Z">
+<meta property="og:description" content="用javascipt实现的一个快排算法1234567891011121314151617181920212223var a = [2,4,5,63,4,5,63,2,4,43]; function quicksort(arr)&amp;#123;    if (arr.length == 0)        return [];     var left = new Array();    var rig">
+<meta property="og:updated_time" content="2017-03-07T08:39:00.139Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello">
-<meta name="twitter:description" content="试试看长什么样1console.log(&amp;apos;hello&amp;apos;);">
+<meta name="twitter:title" content="quicksort">
+<meta name="twitter:description" content="用javascipt实现的一个快排算法1234567891011121314151617181920212223var a = [2,4,5,63,4,5,63,2,4,43]; function quicksort(arr)&amp;#123;    if (arr.length == 0)        return [];     var left = new Array();    var rig">
 
   
 
@@ -173,14 +173,14 @@
 
 
 <div class="content content-post CENTER">
-   <article id="post-hello" class="article article-type-post" itemprop="blogPost">
+   <article id="post-quicksort" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">hello</h1>
+    <h1 class="post-title">quicksort</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2017.03.06</span>
+        <span>2017.03.07</span>
       </span>
 
       
@@ -201,7 +201,7 @@
       
         <span>
           <i class="icon-comment"></i>
-          <a href="http://www.forsigner.com/2017/03/06/hello/#disqus_thread"></a>
+          <a href="http://www.forsigner.com/2017/03/07/quicksort/#disqus_thread"></a>
         </span>
       
 
@@ -220,7 +220,7 @@
 
   <div class="article-content">
     
-      <p>试试看长什么样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">console.log(&apos;hello&apos;);</div></pre></td></tr></table></figure></p>
+      <p>用javascipt实现的一个快排算法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = [<span class="number">2</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">63</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">63</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">43</span>];</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">quicksort</span>(<span class="params">arr</span>)</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (arr.length == <span class="number">0</span>)</div><div class="line">        <span class="keyword">return</span> [];</div><div class="line"> </div><div class="line">    <span class="keyword">var</span> left = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    <span class="keyword">var</span> right = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">    <span class="keyword">var</span> pivot = arr[<span class="number">0</span>];</div><div class="line"> </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</div><div class="line">        <span class="keyword">if</span> (arr[i] &lt; pivot) &#123;</div><div class="line">           left.push(arr[i]);</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">           right.push(arr[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    <span class="keyword">return</span> quicksort(left).concat(pivot, quicksort(right));</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(quicksort(a));</div></pre></td></tr></table></figure></p>
 
     
   </div>
@@ -247,10 +247,10 @@
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2017/03/06/hello-world/">
+    <a class="show pull-left" href="/2017/03/06/hello/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2017/03/07/quicksort/">
+    <a class="hide pull-right" href="/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
@@ -364,7 +364,7 @@
   <script>
     var disqus_shortname = 'forsigner';
     
-    var disqus_url = 'https://JenningFan.github.io/2017/03/06/hello/';
+    var disqus_url = 'https://JenningFan.github.io/2017/03/07/quicksort/';
     
     (function(){
       var dsq = document.createElement('script');
