@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>Java基础小记 | Jenning&#39;s mystery</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Java基础," />
+  
+
+  <meta name="description" content="1、常量用final定义，final修饰的类不能被继承，final修饰的方法不能被重写，final修饰的变量初始化以后不能被更改，且在定义final变量时一定要赋值，即初始化。2、if-if和if-else if的区别: 前者两个if判断都会进行，后者第一个判断为false才会进行第二个判断。3、反射：Class类保存着Java中的类型所有的信息,Class也是Java中的一个类，也需要实例化对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础小记">
+<meta property="og:url" content="https://JenningFan.github.io/2017/04/11/javaNote/index.html">
+<meta property="og:site_name" content="Jenning's mystery">
+<meta property="og:description" content="1、常量用final定义，final修饰的类不能被继承，final修饰的方法不能被重写，final修饰的变量初始化以后不能被更改，且在定义final变量时一定要赋值，即初始化。2、if-if和if-else if的区别: 前者两个if判断都会进行，后者第一个判断为false才会进行第二个判断。3、反射：Class类保存着Java中的类型所有的信息,Class也是Java中的一个类，也需要实例化对象">
+<meta property="og:updated_time" content="2017-04-11T05:36:13.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java基础小记">
+<meta name="twitter:description" content="1、常量用final定义，final修饰的类不能被继承，final修饰的方法不能被重写，final修饰的变量初始化以后不能被更改，且在定义final变量时一定要赋值，即初始化。2、if-if和if-else if的区别: 前者两个if判断都会进行，后者第一个判断为false才会进行第二个判断。3、反射：Class类保存着Java中的类型所有的信息,Class也是Java中的一个类，也需要实例化对象">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/atom.xml"
+            rel="noopener noreferrer"
+            target="_blank"
+            >
+            RSS
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-javaNote" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Java基础小记</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.04.11</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>Jenning</span>
+        </span>
+      
+
+      
+  <span class="article-category">
+    <i class="icon-list"></i>
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </span>
+
+
+
+      
+        <span>
+          <i class="icon-comment"></i>
+          <a href="http://www.forsigner.com/2017/04/11/javaNote/#disqus_thread"></a>
+        </span>
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <p>1、常量用<code>final</code>定义，<code>final</code>修饰的类不能被继承，<code>final</code>修饰的方法不能被重写，<code>final</code>修饰的变量初始化以后不能被更改，且在定义<code>final变量</code>时一定要赋值，即初始化。<br>2、<code>if-if</code>和<code>if-else if</code>的区别: 前者两个if判断都会进行，后者第一个判断为false才会进行第二个判断。<br>3、反射：<code>Class</code>类保存着Java中的类型所有的信息,<code>Class</code>也是Java中的一个类，也需要实例化对象才可以调用里面的方法（静态方法除外）</p>
+<p> 获取<code>Class</code>类型的实例(对象)方法：<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">object.getClass()</div><div class="line">Class.forName(className);</div><div class="line">T.class <span class="comment">//T是任意的Java类型,如Class cl = Date.class;</span></div></pre></td></tr></table></figure></p>
+<p>Class类常用方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cl.getName() <span class="comment">//cl是Class类实例</span></div><div class="line">cl.newInstance() <span class="comment">//调用默认构造器（没有参数的构造器）初始化该Class对象所对应的类名的对象实例</span></div></pre></td></tr></table></figure></p>
+<p>4、Java父类引用指向子类对象:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Person a = <span class="keyword">new</span> Man();</div></pre></td></tr></table></figure></p>
+<p>现象:<br>对象是在Java程序运行时才确定的（非编译阶段）<br>上面例子中，a可以调用Man类中覆盖父类的同名方法，而Man类中自己独有的方法，a是不能去调用的。（编译会报错，因为编译器认为a是一个Person对象，而Person类中找不到Man类独自定义的方法），当然，a也可以获取Person类中的属性和方法。而当Person类和Man类中有同名属性时，a.该属性获取到的是Person类（即父类）中的属性，而非Man类（即子类）中的属性。<br>因而可以得出结论:<br>1、<strong>属性</strong>是绑定类型的，而<strong>方法</strong>是绑定对象的。<br>2、或者说属性是在编译器就确认的，而方法是动态绑定（多态）。<br>在继承多态中：<br>1、对于方法的覆盖，new的谁就调谁，这就是多态。<br>2、对于成员变量的覆盖，this在哪个类就指向哪个类的成员变量，没有多态。<br>3、意思即是Java中public方法才有多态性，而属性是没有多态的。<br>4、对象调用<strong>编译</strong>时类型的属性和<strong>运行</strong>时类型的方法，即所谓的动态连接。</p>
+<blockquote>
+<p>参考文档：<br><a href="http://www.tuicool.com/articles/ZziiIjJ" target="_blank" rel="external">http://www.tuicool.com/articles/ZziiIjJ</a><br><a href="http://blog.csdn.net/rockpk008/article/details/52374203" target="_blank" rel="external">http://blog.csdn.net/rockpk008/article/details/52374203</a><br><a href="http://blog.csdn.net/kaiwii/article/details/8042488" target="_blank" rel="external">http://blog.csdn.net/kaiwii/article/details/8042488</a><br><a href="http://blog.csdn.net/qq_23419401/article/details/52064871" target="_blank" rel="external">http://blog.csdn.net/qq_23419401/article/details/52064871</a></p>
+</blockquote>
+<p>5、Java方法的重载<br>Overloaded的方法是可以改变返回值的类型。<br>这句话是正确的，唯一区分方法重载的是方法的<strong>参数列表不同</strong>，当参数列表不同时就可改变其返回类型<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OverLoadTest</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">m1</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">m1</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;<span class="keyword">return</span> <span class="number">12</span>;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">m1</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;<span class="keyword">return</span> <span class="string">"12"</span>;&#125;<span class="comment">//error! Duplicate method m1(int) in type OverLoadTest </span></div><div class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">m1</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y,<span class="keyword">int</span> z)</span></span>&#123;<span class="keyword">return</span> <span class="string">"abc"</span>;&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">m1</span><span class="params">(String x,<span class="keyword">int</span> y)</span></span>&#123;<span class="keyword">return</span> <span class="number">12</span>;&#125;;</div></pre></td></tr></table></figure></p>
+<p>结论：<br>1、当参数列表不同时，能达到区分重载时，就可以改变方法的返回类型，即重载主要表现在参数上面,当能够区分重载时才能去改变返回值类型.。<br>2、若只是返回值类型不一样是算不上重载的。重载的判断条件还是根据参数来看，只不过是说重载的函数可以返回值不一样，就是说重载可以决定返回值类型，但是返回值类型不能决定重载。</p>
+
+    
+  </div>
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">Welcome</span>
+      <div class="donation-body">
+        <div class="tip text-center">欢迎来到Jenning&#39;s blog</div>
+        <ul class="theme.donation.items.length">
+        
+          <li class="item">
+            <img src="/images/qr-wechat.gif" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/03/07/quicksort/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/atom.xml"
+              rel="noopener noreferrer"
+              target="_blank"
+              >
+              RSS
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+  <section class="disqus-comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </section>
+
+  <script>
+    var disqus_shortname = 'forsigner';
+    
+    var disqus_url = 'https://JenningFan.github.io/2017/04/11/javaNote/';
+    
+    (function(){
+      var dsq = document.createElement('script');
+      dsq.type = 'text/javascript';
+      dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+  <script id="dsq-count-scr" src="//forsigner.disqus.com/count.js" async></script>
+
+
+
+    
+
+
+
+
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
